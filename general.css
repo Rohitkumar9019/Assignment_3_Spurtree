@@ -1,0 +1,46 @@
+body {
+  min-height: 100%;
+  background: #eee;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #222;
+  font-size: 14px;
+  line-height: 26px;
+  padding-bottom: 50px;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  text-transform: uppercase;
+}
+.button-67 {
+  align-items: center;
+  background: lightgray;
+  border: 0;
+  font-weight: bolder;
+  border-radius: 15%;
+  box-shadow: -10px -10px 30px 0 #dad6d6, 10px 10px 30px 0 #1d0dca17;
+  box-sizing: border-box;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  transition: 0.2s;
+  user-select: none;
+  touch-action: manipulation;
+  width: max-content;
+  word-break: normal;
+  word-spacing: normal;
+  padding: 0.1% 0.6% 0.1% 0.6%;
+  margin: 1%;
+}
+
+.button-67:hover {
+  background: rgba(255, 255, 0, 0.792);
+  box-shadow: -15px -15px 30px 0 rgb(195, 190, 102), 15px 15px 30px 0 #1d0dca17;
+}

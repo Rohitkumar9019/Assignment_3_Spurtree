@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./Promises.css" />
+  </head>
+  <body>
+    <h2 class="normal">JavaScript Promises</h2>
+    <span><a href="./Callbacks.html"><button class="button-67" > Callbacks </button></span></a>
+    <span><a href="./AsyncAwait.html"><button class="button-67" > Async Await </button></span></a>
+    <hr />
+    <br />
+    <button class="button-67" onclick="jsDsp()">CLICK TO FETCH</button>
+    <h2 id="demo2" style="margin: 1%; font-weight: 400; display: none">
+      This Resume html file has been fetched with the help of
+      <span style="font-weight: bolder; color: brown">XMLHttpRequest </span>and
+      i have used
+      <span style="font-weight: bolder; color: brown">Promises </span> in order
+      to do this.
+    </h2>
+    <div id="demo"></div>
+    <script>
+      function myDisplayer(some) {
+        document.getElementById("demo").innerHTML = some;
+      }
+
+      let myPromise = new Promise(function (myResolve, myReject) {
+        let req = new XMLHttpRequest();
+        req.open("GET", "../Assignment_1/index.html");
+        req.onload = function () {
+          if (req.status == 200) {
+            myResolve(req.response);
+          } else {
+            myReject("File not Found");
+          }
+        };
+        req.send();
+      });
+
+      function jsDsp() {
+        document.getElementById("demo2").style.display = "block";
+        myPromise.then(
+          function (value) {
+            myDisplayer(value);
+          },
+          function (error) {
+            myDisplayer(error);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

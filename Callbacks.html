@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./general.css">
+  </head>
+  <body>
+    <h2>JavaScript Callbacks</h2>
+    <span><a href="./Promises.html"><button   class="button-67" style="text-decoration: none;">Promises</button></span></a>
+    <span><a href="./AsyncAwait.html"><button class="button-67" style="text-decoration: none;">Async Await</button></span></a>
+    <hr />
+    <h1 style="text-transform: uppercase">enter Employee name:</h1>
+    <span><input id="name" type="text" /></span>
+    <button class="button-67" id="submit" onclick="jsDisp()" type="submit">ENTER</button>
+    <button style="background-color: lightgreen;" class="button-67" id="demo"></button>
+    <button style="background-color: lightgreen;" class="button-67" id="demo2"></button>
+
+    <script>
+      let Name;
+      function myEraser(something) {
+        document.getElementById("demo").innerHTML = "";
+        document.getElementById("demo2").innerHTML = "";
+      }
+      function myDisplayer(something) {
+        document.getElementById("demo").innerHTML =
+          "Welcome to Spurtree Dear " + something + ".";
+      }
+      function fetchName() {
+        Name = document.getElementById("name").value;
+      }
+      function display(someFunction1, someFunction2) {
+        someFunction1();
+        someFunction2(Name);
+      }
+      function displayLuv() {
+        var LName = Name.slice(0, Name.indexOf(" "));
+        document.getElementById("demo2").innerHTML =
+          "We are Happy to have you here " + LName + " !";
+      }
+      function jsDisp() {
+        setTimeout(function(){display(fetchName, myDisplayer);},500)
+        setTimeout(displayLuv, 2500);
+        setTimeout(myEraser, 6000);
+      }
+    </script>
+  </body>
+</html>
