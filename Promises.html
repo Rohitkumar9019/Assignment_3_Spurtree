@@ -25,7 +25,7 @@
 
       let myPromise = new Promise(function (myResolve, myReject) {
         let req = new XMLHttpRequest();
-        req.open("GET", "../Assignment_1/index.html");
+        req.open("GET", "./index.html");
         req.onload = function () {
           if (req.status == 200) {
             myResolve(req.response);
